@@ -2,9 +2,9 @@ import PlaygroundSupport
 import SwiftUI
 
 class Counter: ObservableObject {
-    @Published private(set) var value = 0
+    @Published private(set) var value:Int
 
-    init(value: Int = 0) {
+    init(_ value: Int = 0) {
         self.value = value
     }
 
@@ -21,8 +21,8 @@ struct ContentView: View {
     @StateObject var counter3 = Counter()
     @StateObject var counter4 = Counter()
 
-    init(initialValue _: Int = 0) {
-        self._counter2 = StateObject(wrappedValue: Counter())
+    init(initialValue: Int = 0) {
+        self._counter2 = StateObject(wrappedValue: Counter(initialValue))
     }
 
     var body: some View {
