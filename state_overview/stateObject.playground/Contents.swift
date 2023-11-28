@@ -29,6 +29,7 @@ struct ContentView: View {
         VStack {
             Text("Counter1 \(counter1.value)      ")
             Text("Counter2 \(counter2.value)      ")
+            Text("Counter3 \(counter3.value)      ")
             SubView1(counter3)
             SubView2(counter4: counter4)
         }
@@ -48,7 +49,7 @@ struct SubView1: View {
     }
 
     var body: some View {
-        Text("never updated but update counter3 through binding")
+        Text("never updated but start counter3 through binding")
             .onAppear {
                 counter3.start(delay: 3)
             }
